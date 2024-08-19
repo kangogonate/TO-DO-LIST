@@ -1,11 +1,8 @@
-// Query the submit button and input task field
 let submit = document.getElementById('submit');
 let newTask = document.getElementById('newTask');
 
-// Disable the submit button by default
 submit.disabled = true;
 
-// Listen for input in the input field to enable/disable the submit button
 newTask.addEventListener('input', function() {
     if (newTask.value.trim() !== "") {
         submit.disabled = false;
@@ -18,7 +15,7 @@ newTask.addEventListener('input', function() {
 document.getElementById('taskForm').addEventListener('submit', function(event) {
     event.preventDefault(); // Prevent default form submission
 
-    // Find the task the user just submitted
+
     let taskValue = newTask.value.trim();
 
     if (taskValue !== "") {
@@ -26,7 +23,6 @@ document.getElementById('taskForm').addEventListener('submit', function(event) {
         let listItem = document.createElement('li');
         listItem.textContent = taskValue;
 
-        // Add the new element to the unordered list
         document.getElementById('taskList').append(listItem);
 
         // Clear the input field and disable the submit button
